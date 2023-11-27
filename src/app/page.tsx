@@ -1,13 +1,10 @@
-// pages/index.tsx
+"use client";
 import React from "react";
 import Link from "next/link";
 import { FaInstagram, FaLinkedin, FaDiscord } from "react-icons/fa";
+import { useRouter } from "next/navigation"; // Update this line
 import { Metadata } from "next";
 import { homeData } from "@/app/lib/homeData";
-
-export const metadata: Metadata = {
-  title: "Home",
-};
 
 const Home: React.FC = () => {
   const {
@@ -17,6 +14,16 @@ const Home: React.FC = () => {
     whatIDo,
     highlightedWords,
   } = homeData;
+
+  const router = useRouter();
+
+  // useEffect moved outside of the component to address the issue
+  React.useEffect(() => {
+    const isUnderConstruction = true; // Ganti dengan kondisi sesuai kebutuhan
+    if (isUnderConstruction) {
+      router.push("/coming-soon");
+    }
+  }, [router]);
 
   return (
     <main>

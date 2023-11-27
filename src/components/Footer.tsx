@@ -17,7 +17,7 @@ const Footer = () => {
           </Link>
         </div>
         <div>
-          {footerData.copyright} {footerData.author}
+          &copy;{footerData.copyright} {footerData.author}
         </div>
       </div>
     </footer>
